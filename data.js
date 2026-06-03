@@ -6,7 +6,7 @@ const SITE_DATA = {
     slogan: "Prešov s energiou, skúsenosťou a rozvahou.",
     intro:
       "Moderný, otvorený a lepšie spravovaný Prešov potrebuje vedenie, ktoré počúva ľudí, rozhoduje vecne a dokáže spájať skúsenosti s novou energiou.",
-    image: "assets/kandidat.jpg",
+    image: "assets/kandidat.png",
     imageAlt: "Portrét kandidáta Lukáš Anderko"
   },
   election: {
