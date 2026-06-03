@@ -9,6 +9,14 @@ const SITE_DATA = {
     image: "assets/kandidat.jpg",
     imageAlt: "Portrét kandidáta Lukáš Anderko"
   },
+  election: {
+    date: "2026-10-24T07:00:00+02:00",
+    label: "Komunálne voľby",
+    title: "Odpočítavanie do volieb",
+    text:
+      "Spojené samosprávne voľby sú avizované na sobotu 24. októbra 2026. Dátum si pred zverejnením ešte overte podľa oficiálneho rozhodnutia.",
+    finishedText: "Voľby už prebehli. Ďakujeme za každý hlas a podporu."
+  },
   navigation: [
     { label: "Úvod", target: "uvod" },
     { label: "O mne", target: "o-mne" },

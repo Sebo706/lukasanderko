@@ -274,6 +274,51 @@ h3 {
   max-width: 980px;
 }
 
+.countdown {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1fr);
+  gap: 28px;
+  align-items: center;
+  padding-top: clamp(36px, 5vw, 64px);
+  padding-bottom: clamp(36px, 5vw, 64px);
+  background: #fff;
+}
+
+.countdown-copy p:not(.eyebrow) {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.countdown-item {
+  min-width: 0;
+  padding: 18px 12px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+
+.countdown-item strong {
+  display: block;
+  color: var(--navy);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+
+.countdown-item span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
 .section-heading p:not(.eyebrow) {
   color: var(--muted);
   font-size: 1.08rem;
@@ -505,6 +550,7 @@ blockquote {
   }
 
   .hero,
+  .countdown,
   .split,
   .why,
   .support-panel {
@@ -512,6 +558,7 @@ blockquote {
   }
 
   .program-grid,
+  .countdown-grid,
   .news-grid,
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -539,6 +586,7 @@ blockquote {
   }
 
   .program-grid,
+  .countdown-grid,
   .news-grid,
   .contact-grid {
     grid-template-columns: 1fr;

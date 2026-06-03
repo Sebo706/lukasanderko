@@ -22,6 +22,7 @@ Tam upravíte:
 
 - meno kandidáta
 - slogan
+- dátum volieb a text odpočítavania
 - úvodné texty
 - programové body
 - aktuality
@@ -31,6 +32,8 @@ Tam upravíte:
 - GDPR a cookies text
 
 Po uložení súboru obnovte stránku v prehliadači.
+
+Dátum odpočítavania je v časti `election.date`. Použite formát napríklad `2026-10-24T07:00:00+02:00`.
 
 ## 3. Kam vložiť fotografiu kandidáta
 

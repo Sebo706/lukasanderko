@@ -74,6 +74,9 @@ function hydrateContent() {
   setText("[data-candidate-name]", SITE_DATA.candidate.name);
   setText("[data-slogan]", SITE_DATA.candidate.slogan);
   setText("[data-intro]", SITE_DATA.candidate.intro);
+  setText("[data-election-label]", SITE_DATA.election.label);
+  setText("[data-election-title]", SITE_DATA.election.title);
+  setText("[data-election-text]", SITE_DATA.election.text);
   setText("[data-about-kicker]", SITE_DATA.about.kicker);
   setText("[data-about-title]", SITE_DATA.about.title);
   setText("[data-about-text]", SITE_DATA.about.text);
@@ -103,6 +106,39 @@ function hydrateContent() {
   phone.querySelector("strong").textContent = SITE_DATA.contact.phone;
 
   document.querySelector("[data-contact-facebook]").href = SITE_DATA.contact.facebook;
+}
+
+function setupCountdown() {
+  const targetDate = new Date(SITE_DATA.election.date);
+  const countdown = document.querySelector("[data-countdown]");
+  const days = document.querySelector("[data-count-days]");
+  const hours = document.querySelector("[data-count-hours]");
+  const minutes = document.querySelector("[data-count-minutes]");
+  const seconds = document.querySelector("[data-count-seconds]");
+  const electionText = document.querySelector("[data-election-text]");
+
+  function updateCountdown() {
+    const remaining = targetDate.getTime() - Date.now();
+
+    if (Number.isNaN(targetDate.getTime()) || remaining <= 0) {
+      days.textContent = "0";
+      hours.textContent = "0";
+      minutes.textContent = "0";
+      seconds.textContent = "0";
+      countdown.classList.add("finished");
+      electionText.textContent = SITE_DATA.election.finishedText;
+      return;
+    }
+
+    const totalSeconds = Math.floor(remaining / 1000);
+    days.textContent = Math.floor(totalSeconds / 86400).toString();
+    hours.textContent = Math.floor((totalSeconds % 86400) / 3600).toString().padStart(2, "0");
+    minutes.textContent = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, "0");
+    seconds.textContent = Math.floor(totalSeconds % 60).toString().padStart(2, "0");
+  }
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
 }
 
 function setupMenu() {
@@ -152,3 +188,4 @@ renderLists();
 setupMenu();
 setupActiveNavigation();
 setupHeaderShadow();
+setupCountdown();
